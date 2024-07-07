@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.select-container {
+  width: 200px;
+  margin-top: 40vh;
+}
+
+.select,
+.options {
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(156, 151, 156, 1);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(156, 151, 156, 1);
+  box-shadow: 0px 0px 4px 0px rgba(156, 151, 156, 1);
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 15px;
+  outline-color: var(--darkgray);
+  cursor: pointer;
+
+  .select_label {
+    color: var(--grey);
+  }
+
+  .select_label--selected {
+    color: var(--black);
+  }
+
+  .select_img--rotated {
+    rotate: 180deg;
+  }
+
+  .remove_icon {
+    display: flex;
+  }
+
+  .remove_icon_button {
+    height: 24px;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: var(--lightgrey);
+    }
+  }
+}
+
+.options {
+  margin-top: 5px;
+
+  .search {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 24px;
+      background-image: url(assets/icons/search.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .search_input {
+      font-family: 'Roboto';
+      font-size: 14px;
+      padding: 11px 17px 11px 37px;
+      border: none;
+      outline: transparent;
+
+      &::placeholder {
+        color: var(--grey);
+      }
+    }
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--lightgrey);
+    }
+
+    .option-img {
+      width: 19px;
+      margin-right: 5px;
+    }
+  }
+
+  .option--hovered {
+    background-color: var(--lightgrey);
+  }
+
+  .option--no-result {
+    cursor: auto;
+    color: var(--grey);
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  .option[aria-selected='true'],
+  .option[aria-selected='true']:hover {
+    background-color: var(--grey);
+    color: var(--white);
+  }
+}
